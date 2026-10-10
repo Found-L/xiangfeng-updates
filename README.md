@@ -4,7 +4,7 @@ Windows 取色助手的单文件发布与自动更新仓库。
 
 [下载最新正式版](https://github.com/Found-L/xiangfeng-updates/releases/latest) · [版本记录](https://github.com/Found-L/xiangfeng-updates/releases)
 
-支持 Windows 10/11 x64，使用前安装 [.NET 8 Desktop Runtime x64](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)。下载一个中文名加版本号的 EXE，例如 `相逢-v0.17.49.exe`，即可分享和运行。`xiangfeng.exe` 保留为相同程序的兼容副本，供已有固定下载链接使用。
+支持 Windows 10/11 x64，使用前安装 [.NET 8 Desktop Runtime x64](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)。只需下载一个 EXE。分享文件可命名为 `相逢-v0.17.49.exe`；GitHub 下载项使用这一中文显示标签，实际资产文件名为 `xiangfeng-v0.17.49.exe`。GitHub 会清理上传文件名中的非字母数字字符，实测中文会被去除，见 [GitHub 资产命名说明](https://docs.github.com/en/rest/releases/assets#upload-a-release-asset)。`xiangfeng.exe` 保留为相同程序的兼容副本，供已有固定下载链接使用。
 
 版本号表示该下载包的版本。当前客户端自动更新会原地替换并沿用原文件名，升级后的实际版本以软件内显示为准。
 
@@ -17,8 +17,8 @@ Windows 取色助手的单文件发布与自动更新仓库。
 ## 发布新版
 
 1. 在开发工作区修改程序集版本，构建并完成离线回归、界面检查及更新助手验证。
-2. 运行 `tools/New-UpdateManifest.ps1 -Executable <已验证的EXE路径>`，生成 `相逢-v<版本>.exe`、固定链接兼容副本 `xiangfeng.exe` 和 `update.json`。更新清单指向中文版本文件，URL 中的中文按 UTF-8 百分号编码。
-3. 创建同版本标签，例如 `v0.17.49`，在正式 Release 中上传这三个文件。发布为最新正式版本，避免将测试版设为 latest。用户只需下载一个 EXE。
+2. 运行 `tools/New-UpdateManifest.ps1 -Executable <已验证的EXE路径>`，生成本机分享文件 `相逢-v<版本>.exe`，以及 GitHub 资产 `xiangfeng-v<版本>.exe`、固定链接兼容副本 `xiangfeng.exe` 和 `update.json`。更新清单指向实际的英文版本文件。
+3. 创建同版本标签，例如 `v0.17.49`，只上传上述三个 GitHub 资产；将版本 EXE 的显示标签设为 `相逢-v<版本>.exe`。发布为最新正式版本，避免将测试版设为 latest。用户只需下载一个 EXE；中文本机副本不直接上传，避免 GitHub 去除中文后产生错误文件名。
 4. 检查固定更新入口和 EXE 下载，确认版本、长度、SHA-256 与发布文件一致。
 
 固定入口：[update.json](https://github.com/Found-L/xiangfeng-updates/releases/latest/download/update.json)。协议详见 [更新协议](docs/update-protocol.md)。
