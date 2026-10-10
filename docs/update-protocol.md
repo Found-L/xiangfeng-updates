@@ -1,6 +1,6 @@
 # 更新协议
 
-正式 Release 包含 `相逢-v<版本>.exe`、兼容固定下载链接的相同程序副本 `xiangfeng.exe` 和 `update.json`。客户端通过最新正式 Release 的固定 HTTPS 地址读取清单，再下载中文版本 EXE；中文文件名在 `downloadUrl` 中按 UTF-8 百分号编码。客户端不包含 GitHub 登录令牌，公开下载无需登录。旧版 Release 沿用其原资产名称。
+正式 Release 包含 `xiangfeng-v<版本>.exe`、兼容固定下载链接的相同程序副本 `xiangfeng.exe` 和 `update.json`。版本 EXE 使用中文显示标签 `相逢-v<版本>.exe`；本机分享副本也使用中文文件名。GitHub 实测会去除资产文件名中的中文，因此清单必须指向实际英文版本文件，不能根据显示标签拼接 URL。客户端通过最新正式 Release 的固定 HTTPS 地址读取清单，再下载该版本 EXE。客户端不包含 GitHub 登录令牌，公开下载无需登录。旧版 Release 沿用其原资产名称。
 
 清单字段：
 
