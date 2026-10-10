@@ -1,4 +1,4 @@
-﻿# 更新协议
+# 更新协议
 
 正式 Release 包含 `相逢-v<版本>.exe`、兼容固定下载链接的相同程序副本 `xiangfeng.exe` 和 `update.json`。客户端通过最新正式 Release 的固定 HTTPS 地址读取清单，再下载中文版本 EXE；中文文件名在 `downloadUrl` 中按 UTF-8 百分号编码。客户端不包含 GitHub 登录令牌，公开下载无需登录。旧版 Release 沿用其原资产名称。
 
